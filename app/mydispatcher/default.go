@@ -32,6 +32,10 @@ import (
 
 var errSniffingTimeout = newError("timeout on sniffing")
 
+type localHostsLookup interface {
+	LookupHosts(domain string) *net.Address
+}
+
 type cachedReader struct {
 	sync.Mutex
 	reader *pipe.Reader
@@ -385,17 +389,33 @@ func sniffer(ctx context.Context, cReader *cachedReader, metadataOnly bool, netw
 func (d *DefaultDispatcher) routedDispatch(ctx context.Context, link *transport.Link, destination net.Destination) {
 	outbounds := session.OutboundsFromContext(ctx)
 	ob := outbounds[len(outbounds)-1]
-	// START of MODIFICATION
+
+	// START of COMPATIBILITY MODIFICATION
 	if d.dns != nil && destination.Address.Family().IsDomain() {
-		ips, _, err := d.dns.LookupIP(destination.Address.Domain(), dns.IPOption{
-			IPv4Enable: true,
-			IPv6Enable: true,
-		})
-		if err == nil && len(ips) > 0 {
-			// 成功解析到 IP，选择第一个 IP 作为新的目标地址
-			proxied := net.IPAddress(ips[0])
+		var proxied *net.Address
+
+		// Attempt to use the legacy interface first for backward compatibility.
+		// The type assertion is done on our locally defined `localHostsLookup` interface.
+		if hosts, ok := d.dns.(localHostsLookup); ok {
+			// This branch will be taken if running with an older xray-core.
+			proxied = hosts.LookupHosts(ob.Target.String())
+		} else {
+			// This branch is for newer xray-core versions.
+			// We fall back to the new LookupIP method.
+			ips, _, err := d.dns.LookupIP(destination.Address.Domain(), dns.IPOption{
+				IPv4Enable: true,
+				IPv6Enable: true, // Set to true to query both address families
+			})
+			if err == nil && len(ips) > 0 {
+				// Successfully found IPs, use the first one.
+				addr := net.IPAddress(ips[0])
+				proxied = &addr // Assign the address to proxied
+			}
+		}
+
+		if proxied != nil {
 			ro := ob.RouteTarget == destination
-			destination.Address = proxied
+			destination.Address = *proxied
 			if ro {
 				ob.RouteTarget = destination
 			} else {
