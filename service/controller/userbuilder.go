@@ -17,7 +17,7 @@ import (
 	"github.com/xtls/xray-core/proxy/trojan"
 	"github.com/xtls/xray-core/proxy/vless"
 
-	"github.com/XrayR-project/XrayR/api"
+	"github.com/Aqr-K/XrayR/api"
 )
 
 var AEADMethod = map[shadowsocks.CipherType]uint8{
@@ -90,7 +90,7 @@ func (c *Controller) buildSSUser(userInfo *[]api.UserInfo, method string) (users
 				Level: 0,
 				Email: e,
 				Account: serial.ToTypedMessage(&shadowsocks_2022.Account{
-					Key:   userKey,
+					Key: userKey,
 				}),
 			}
 		} else {
@@ -123,7 +123,7 @@ func (c *Controller) buildSSPluginUser(userInfo *[]api.UserInfo) (users []*proto
 				Level: 0,
 				Email: e,
 				Account: serial.ToTypedMessage(&shadowsocks_2022.Account{
-					Key:   userKey,
+					Key: userKey,
 				}),
 			}
 		} else {

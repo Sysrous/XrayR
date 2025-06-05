@@ -7,7 +7,7 @@ import (
 	"github.com/xtls/xray-core/core"
 	"github.com/xtls/xray-core/infra/conf"
 
-	"github.com/XrayR-project/XrayR/api"
+	"github.com/Aqr-K/XrayR/api"
 )
 
 // OutboundBuilder build freedom outbound config for addOutbound

@@ -19,7 +19,7 @@ import (
 	"github.com/xtls/xray-core/common/errors"
 	"golang.org/x/time/rate"
 
-	"github.com/XrayR-project/XrayR/api"
+	"github.com/Aqr-K/XrayR/api"
 )
 
 type UserInfo struct {

@@ -16,7 +16,7 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	"github.com/XrayR-project/XrayR/panel"
+	"github.com/Aqr-K/XrayR/panel"
 )
 
 var (

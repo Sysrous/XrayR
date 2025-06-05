@@ -17,7 +17,7 @@ import (
 
 	"github.com/go-resty/resty/v2"
 
-	"github.com/XrayR-project/XrayR/api"
+	"github.com/Aqr-K/XrayR/api"
 )
 
 type APIClient struct {
@@ -187,7 +187,7 @@ func (c *APIClient) GetNodeInfo() (nodeInfo *api.NodeInfo, err error) {
 	nodeInfo, err = c.ParseNodeInfo(nodeInfoResponse)
 	if err != nil {
 		res, _ := json.Marshal(nodeInfoResponse)
-		return nil, fmt.Errorf("parse node info failed: %s, \nError: %s, \nPlease check the doc of custom_config for help: https://xrayr-project.github.io/XrayR-doc/dui-jie-sspanel/sspanel/sspanel_custom_config", string(res), err)
+		return nil, fmt.Errorf("parse node info failed: %s, \nError: %s, \nPlease check the doc of custom_config for help: https://Aqr-K.github.io/XrayR-doc/dui-jie-sspanel/sspanel/sspanel_custom_config", string(res), err)
 	}
 
 	if err != nil {
