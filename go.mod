@@ -22,8 +22,8 @@ require (
 	github.com/sagernet/sing-shadowsocks v0.2.8
 	github.com/shirou/gopsutil/v3 v3.24.5
 	github.com/sirupsen/logrus v1.9.3
-	github.com/spf13/cobra v1.8.1
-	github.com/spf13/viper v1.20.1
+	github.com/spf13/cobra v1.9.1
+	github.com/spf13/viper v1.18.2
 	github.com/stretchr/testify v1.10.0
 	github.com/xtls/xray-core v1.250516.0
 	golang.org/x/crypto v0.38.0
