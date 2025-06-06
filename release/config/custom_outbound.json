@@ -1,8 +1,17 @@
 [
   {
+    "tag": "unlock",
+    "protocol": "freedom",
+    "settings": {
+      "domainStrategy": "UseIPv4"
+    }
+  },
+  {
     "tag": "IPv4_out",
     "protocol": "freedom",
-    "settings": {}
+    "settings": {
+      "domainStrategy": "UseIPv4v6"
+    }
   },
   {
     "tag": "IPv6_out",
@@ -12,19 +21,7 @@
     }
   },
   {
-    "tag": "socks5-warp",
-    "protocol": "socks",
-    "settings": {
-      "servers": [
-        {
-          "address": "127.0.0.1",
-          "port": 1080
-        }
-      ]
-    }
-  },
-  {
-    "protocol": "blackhole",
-    "tag": "block"
+    "tag": "block",
+    "protocol": "blackhole"
   }
 ]
