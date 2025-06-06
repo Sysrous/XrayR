@@ -1,14 +1,12 @@
 # XrayR
 
-[![](https://img.shields.io/badge/TgChat-@XrayR讨论-blue.svg)](https://t.me/XrayR_project)
-[![](https://img.shields.io/badge/Channel-@XrayR通知-blue.svg)](https://t.me/XrayR_channel)
 ![](https://img.shields.io/github/stars/Aqr-K/XrayR)
 ![](https://img.shields.io/github/forks/Aqr-K/XrayR)
 ![](https://github.com/Aqr-K/XrayR/actions/workflows/release.yml/badge.svg)
 ![](https://github.com/Aqr-K/XrayR/actions/workflows/docker.yml/badge.svg)
 [![Github All Releases](https://img.shields.io/github/downloads/Aqr-K/XrayR/total.svg)]()
 
-[English](https://github.com/Aqr-K/XrayR/blob/master/README-en.md)|[Iranian](https://github.com/Aqr-K/XrayR/blob/master/README_Fa.md)|[Vietnamese](https://github.com/Aqr-K/XrayR/blob/master/README-vi.md)
+[English](https://github.com/Aqr-K/XrayR/blob/master/README-en.md)
 
 A Xray backend framework that can easily support many panels.
 
@@ -62,10 +60,6 @@ wget -N https://raw.githubusercontent.com/Aqr-K/XrayR-release/master/install.sh 
 ### 手动安装
 
 [手动安装教程](https://Aqr-K.github.io/XrayR-doc/xrayr-xia-zai-he-an-zhuang/install/manual)
-
-## 配置文件及详细使用教程
-
-[详细使用教程](https://Aqr-K.github.io/XrayR-doc/)
 
 ## Thanks
 
