@@ -1,7 +1,6 @@
 # XrayR
 
-[![](https://img.shields.io/badge/TgChat-@XrayR讨论-blue.svg)](https://t.me/XrayR_project)
-[![](https://img.shields.io/badge/Channel-@XrayR通知-blue.svg)](https://t.me/XrayR_channel)
+
 ![](https://img.shields.io/github/stars/Aqr-K/XrayR)
 ![](https://img.shields.io/github/forks/Aqr-K/XrayR)
 ![](https://github.com/Aqr-K/XrayR/actions/workflows/release.yml/badge.svg)
