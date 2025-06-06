@@ -51,17 +51,6 @@ A Xray backend framework that can easily support many panels.
 | 按照用户限速      | √     | √      | √           |
 | 自定义 DNS        | √     | √      | √           |
 
-## 支持前端
-
-| 前端                                                        | v2ray | trojan | shadowsocks                     |
-| ----------------------------------------------------------- | ----- | ------ | ------------------------------- |
-| sspanel-uim                                                 | √     | √      | √ (单端口多用户和 V2ray-Plugin) |
-| v2board                                                     | √     | √      | √                               |
-| [PMPanel](https://github.com/ByteInternetHK/PMPanel)        | √     | √      | √                               |
-| [ProxyPanel](https://github.com/ProxyPanel/ProxyPanel)      | √     | √      | √                               |
-| [WHMCS (V2RaySocks)](https://v2raysocks.doxtex.com/)        | √     | √      | √                               |
-| [GoV2Panel](https://github.com/pingProMax/gov2panel)        | √     | √      | √                               |
-| [BunPanel](https://github.com/pennyMorant/bunpanel-release) | √     | √      | √                               |
 
 ## 软件安装
 
@@ -70,11 +59,6 @@ A Xray backend framework that can easily support many panels.
 ```
 wget -N https://raw.githubusercontent.com/Aqr-K/XrayR-release/master/install.sh && bash install.sh
 ```
-
-### 使用 Docker 部署软件
-
-[Docker 部署教程](https://Aqr-K.github.io/XrayR-doc/xrayr-xia-zai-he-an-zhuang/install/docker)
-
 ### 手动安装
 
 [手动安装教程](https://Aqr-K.github.io/XrayR-doc/xrayr-xia-zai-he-an-zhuang/install/manual)
@@ -93,12 +77,6 @@ wget -N https://raw.githubusercontent.com/Aqr-K/XrayR-release/master/install.sh 
 ## Licence
 
 [Mozilla Public License Version 2.0](https://github.com/Aqr-K/XrayR/blob/master/LICENSE)
-
-## Telgram
-
-[XrayR 后端讨论](https://t.me/XrayR_project)
-
-[XrayR 通知](https://t.me/XrayR_channel)
 
 ## Stargazers over time
 
