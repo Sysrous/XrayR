@@ -25,6 +25,6 @@ func getDefaultControllerConfig() *controller.Config {
 		ListenIP:       "0.0.0.0",
 		SendIP:         "0.0.0.0",
 		UpdatePeriodic: 60,
-		DNSType:        "AsIs",
+		DNSType:        "UseIP",
 	}
 }
