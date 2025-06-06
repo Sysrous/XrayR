@@ -168,6 +168,7 @@ func (d *DefaultDispatcher) getLink(ctx context.Context) (*transport.Link, *tran
 	var user *protocol.MemoryUser
 	if sessionInbound != nil {
 		user = sessionInbound.User
+		sessionInbound.CanSpliceCopy = 3
 	}
 
 	if user != nil && len(user.Email) > 0 {
