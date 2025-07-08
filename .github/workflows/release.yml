@@ -147,22 +147,14 @@ jobs:
             cp ${GITHUB_WORKSPACE}/release/config/custom_inbound.json ./build_assets/custom_inbound.json
             cp ${GITHUB_WORKSPACE}/release/config/rulelist ./build_assets/rulelist
             cp ${GITHUB_WORKSPACE}/release/config/config.yml.example ./build_assets/config.yml
-            cp ${GITHUB_WORKSPACE}/README.md ./build_assets/README.md
-            cp ${GITHUB_WORKSPACE}/LICENSE ./build_assets/LICENSE
-            cp ${GITHUB_WORKSPACE}/release/config/dns.json ./build_assets/dns.json
-            cp ${GITHUB_WORKSPACE}/release/config/route.json ./build_assets/route.json
-            cp ${GITHUB_WORKSPACE}/release/config/custom_outbound.json ./build_assets/custom_outbound.json
-            cp ${GITHUB_WORKSPACE}/release/config/custom_inbound.json ./build_assets/custom_inbound.json
-            cp ${GITHUB_WORKSPACE}/release/config/rulelist ./build_assets/rulelist
-            cp ${GITHUB_WORKSPACE}/release/config/config.yml.example ./build_assets/config.yml
+            # 下载 geosite.dat
             GEOSITE_URL="https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
             echo -e "Downloading ${GEOSITE_URL}..."
             curl -L "${GEOSITE_URL}" -o ./build_assets/geosite.dat
+            # 下载 geoip.dat
             GEOIP_URL="https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat"
             echo -e "Downloading ${GEOIP_URL}..."
             curl -L "${GEOIP_URL}" -o ./build_assets/geoip.dat
-done
-
       - name: Create ZIP archive
         shell: bash
         run: |
