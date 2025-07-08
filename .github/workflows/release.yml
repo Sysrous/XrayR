@@ -161,16 +161,6 @@ jobs:
             GEOIP_URL="https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat"
             echo -e "Downloading ${GEOIP_URL}..."
             curl -L "${GEOIP_URL}" -o ./build_assets/geoip.dat
-            done
-
-  INFO=($(echo $i | awk 'BEGIN{FS=" ";OFS=" "} {print $1,$2,$3}'))
-  DOWNLOAD_URL="https://raw.githubusercontent.com/v2fly/${INFO[0]}/release/${INFO[1]}.dat"
-  FILE_NAME="${INFO[2]}.dat"
-  echo -e "Downloading ${DOWNLOAD_URL}..."
-  curl -L "${DOWNLOAD_URL}" -o ./build_assets/${FILE_NAME}
-  echo -e "Verifying HASH key..."
-  HASH="$(curl -sL "${DOWNLOAD_URL}.sha256sum" | awk -F ' ' '{print $1}')"
-  [ "$(sha256sum "./build_assets/${FILE_NAME}" | awk -F ' ' '{print $1}')" == "${HASH}" ] || { echo -e "The HASH key of ${FILE_NAME} does not match cloud one."; exit 1; }
 done
 
       - name: Create ZIP archive
